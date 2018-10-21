@@ -1,3 +1,6 @@
 yarn.lock
 .idea/
 node_modules/
+package-lock.json
+app/lib/
+yarn-error.log
