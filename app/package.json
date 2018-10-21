@@ -1,0 +1,14 @@
+{
+  "name": "angularjs-example",
+  "version": "1.0.0",
+  "description": "AngularJs",
+  "main": "index.js",
+  "repository": "https://github.com/ioansen/angularjs-example.git",
+  "author": "ioansen <ioan.sndr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-mocks": "^1.7.5",
+    "angular-route": "^1.7.5"
+  }
+}
