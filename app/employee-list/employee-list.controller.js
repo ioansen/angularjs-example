@@ -10,7 +10,7 @@ angular.module('employeeList')
             }, {
                 id: 2,
                 name: 'Marian',
-                lastname: 'Duca',
+                lastname: 'Irideanu',
                 salary: 2500
             }, {
                 id: 3,
