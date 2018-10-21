@@ -19,4 +19,6 @@ angular.module('employeeList')
                 salary: 7000
             },
         ];
+
+        this.orderProp = 'id';
 });

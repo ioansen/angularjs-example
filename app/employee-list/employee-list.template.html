@@ -3,7 +3,19 @@
         <div class="col-md-2">
             <!--Sidebar content-->
 
-            Search: <input ng-model="$ctrl.query" />
+            <p>
+                Search:
+                <input ng-model="$ctrl.query">
+            </p>
+
+            <p>
+                Sort by:
+                <select ng-model="$ctrl.orderProp">
+                    <option value="id">By id</option>
+                    <option value="lastname">Alphabetical</option>
+                    <option value="salary">By salary</option>
+                </select>
+            </p>
 
         </div>
         <div class="col-md-10">
@@ -17,7 +29,7 @@
                     <th>Salary</th>
                 </tr>
 
-                <tr ng-repeat = "e in $ctrl.employees | filter:$ctrl.query">
+                <tr ng-repeat = "e in $ctrl.employees | filter:$ctrl.query | orderBy:$ctrl.orderProp">
                     <td>{{ e.id }}</td>
                     <td>{{ e.name }}</td>
                     <td>{{ e.lastname }}</td>

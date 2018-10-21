@@ -20,6 +20,55 @@ describe('mainApp Application', function() {
             expect(employeeList.count()).toBe(2);
         });
 
+        it('should be possible to control employee order via the drop-down menu', function() {
+            var orderSelect = element(by.model('$ctrl.orderProp'));
+            var nameOption = orderSelect.element(by.css('option[value="lastname"]'));
+            var salaryOption = orderSelect.element(by.css('option[value="salary"]'));
+            var employeeLastnameColumn = element.all(by.repeater('e in $ctrl.employees').column('e.lastname'));
+            var employeeIdColumn = element.all(by.repeater('e in $ctrl.employees').column('e.id'));
+            var employeeSalaryColumn = element.all(by.repeater('e in $ctrl.employees').column('e.salary'));
+
+            function getLastnames() {
+                return employeeLastnameColumn.map(function(elem) {
+                    return elem.getText();
+                });
+            }
+
+            function getIds() {
+                return employeeIdColumn.map(function(elem) {
+                    return elem.getText();
+                });
+            }
+
+            function getSalaries() {
+                return employeeSalaryColumn.map(function(elem) {
+                    return elem.getText();
+                });
+            }
+
+            expect(getIds()).toEqual([
+                '1',
+                '2',
+                '3'
+            ]);
+
+            nameOption.click();
+
+            expect(getLastnames()).toEqual([
+                'Irideanu',
+                'Irideanu',
+                'Mateianu'
+            ]);
+
+            salaryOption.click();
+
+            expect(getSalaries()).toEqual([
+                '2500',
+                '4500',
+                '7000'
+            ]);
+        });
+
     });
 
 });
