@@ -5,14 +5,19 @@
     <title>Employees</title>
     <link href="app.css" rel="stylesheet" />
     <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
     <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
     <script src="employee-list/employee-list.module.js"></script>
     <script src="employee-list/employee-list.controller.js"></script>
     <script src="employee-list/employee-list.component.js"></script>
+    <script src="employee-detail/employee-detail.module.js"></script>
+    <script src="employee-detail/employee-detail.controller.js"></script>
+    <script src="employee-detail/employee-detail.component.js"></script>
 </head>
 <body>
 
-    <employee-list></employee-list>
+    <div ng-view></div>
 
 </body>
 </html>

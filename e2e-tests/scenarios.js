@@ -1,6 +1,6 @@
 describe('mainApp Application', function() {
 
-    describe('employeeList', function() {
+    describe('View: employeeList', function() {
 
         beforeEach(function() {
             browser.get('index.html');
@@ -61,8 +61,26 @@ describe('mainApp Application', function() {
                 expect(sorted).toEqual(textArray);
             });
 
+        });
 
+        it('should render employee specific links', function() {
+            var query = element(by.model('$ctrl.query'));
+            query.sendKeys('Samuel');
 
+            element.all(by.css('.emp-row td a')).first().click();
+            expect(browser.getCurrentUrl()).toBe('http://localhost:8081/index.html#!/employees/view/2');
+        });
+
+    });
+
+    describe('View: employeeDetail', function() {
+
+        beforeEach(function() {
+            browser.get('index.html#!/employees/view/2');
+        });
+
+        it('should display placeholder page with `id`', function() {
+            expect(element(by.binding('$ctrl.id')).getText()).toBe('2');
         });
 
     });

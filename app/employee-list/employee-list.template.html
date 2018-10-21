@@ -21,7 +21,7 @@
         <div class="col-md-10">
             <!--Body content-->
 
-            <table>
+            <table class="emp-table">
                 <tr>
                     <th>Emp ID</th>
                     <th>First Name</th>
@@ -29,11 +29,14 @@
                     <th>Salary</th>
                 </tr>
 
-                <tr ng-repeat = "e in $ctrl.employees | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                <tr class="emp-row" ng-repeat = "e in $ctrl.employees | filter:$ctrl.query | orderBy:$ctrl.orderProp">
                     <td>{{ e.id }}</td>
                     <td>{{ e.name }}</td>
                     <td>{{ e.lastname }}</td>
                     <td>{{ e.salary }}</td>
+                    <td>
+                        <a class="button_table" href="#!/employees/view/{{e.id}}">View</a>
+                    </td>
                 </tr>
             </table>
 
