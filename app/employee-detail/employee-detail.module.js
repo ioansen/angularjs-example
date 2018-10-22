@@ -1,3 +1,4 @@
 angular.module('employeeDetail', [
-    'ngRoute'
+    'ngRoute',
+    'core.employee'
 ]);

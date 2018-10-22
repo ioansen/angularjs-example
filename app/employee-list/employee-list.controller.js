@@ -1,11 +1,12 @@
 // Define the `EmployeeListController` controller on the `employeeList` module
 angular.module('employeeList')
-    .controller('EmployeeListController', ['$http', function EmployeeListController($http) {
+    .controller('EmployeeListController', ['Employee', function EmployeeListController(Employee) {
         var self = this;
         self.orderProp = 'id';
-        var url = 'employees/employees.json';
 
-        $http.get(url).then(function(response) {
-            self.employees = response.data;
-        });
+        Employee.list()
+            .then(function (response) {
+                self.employees = response.data;
+                control.log(self.employees);
+            });
 }]);

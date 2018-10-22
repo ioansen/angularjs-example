@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `employeeList` module
-angular.module('employeeList', []);
+angular.module('employeeList', ['core.employee']);
