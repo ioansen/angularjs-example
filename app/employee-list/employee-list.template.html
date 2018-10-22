@@ -36,10 +36,11 @@
                     <td>{{ e.salary }}</td>
                     <td>
                         <a class="button_table" href="#!/employees/view/{{e.id}}">View</a>
-
+                        <button class="button_table" ng-click="$ctrl.delete(e.id)">Delete</button>
                     </td>
                 </tr>
             </table>
+            <br>
             <a class="button" href="#!/employees/add/">Add employee</a>
         </div>
     </div>

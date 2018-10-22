@@ -9,4 +9,9 @@ angular.module('employeeList')
                 self.employees = response.data;
                 control.log(self.employees);
             });
+        
+        self.delete = function (id) {
+            console.log("employee deleted");
+            Employee.delete(id);
+        }
 }]);
