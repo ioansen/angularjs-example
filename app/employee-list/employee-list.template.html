@@ -36,6 +36,7 @@
                     <td>{{ e.salary }}</td>
                     <td>
                         <a class="button_table" href="#!/employees/view/{{e.id}}">View</a>
+                        <a class="button_table" href="#!/employees/update/{{e.id}}">Modify</a>
                         <button class="button_table" ng-click="$ctrl.delete(e.id)">Delete</button>
                     </td>
                 </tr>

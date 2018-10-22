@@ -17,10 +17,9 @@ angular.module('mainApp')
                 }).
                 when('/employees/add/', {
                     template: '<employee-add></employee-add>'
-                })./*
+                }).
                 when('/employees/update/:id', {
-                    templateUrl: 'employee-add.html',
-                    controller: 'EmployeeUpdateCtrl'
-                }).*/
+                    template: '<employee-modify></employee-modify>'
+                }).
                 otherwise({redirectTo: '/employees'});
 }]);

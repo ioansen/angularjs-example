@@ -4,5 +4,6 @@ angular.module('mainApp',[
     'ngRoute',
     'employeeDetail',
     'employeeList',
-    'employeeAdd'
+    'employeeAdd',
+    'employeeModify'
 ]);
