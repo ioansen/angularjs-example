@@ -3,5 +3,6 @@
 angular.module('mainApp',[
     'ngRoute',
     'employeeDetail',
-    'employeeList'
+    'employeeList',
+    'employeeAdd'
 ]);

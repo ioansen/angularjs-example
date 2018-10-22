@@ -15,14 +15,9 @@ angular.module('mainApp')
                 when('/employees/view/:id', {
                     template: '<employee-detail></employee-detail>'
                 }).
-                /*when('/employees/delete/:id', {
-                    templateUrl: 'employee-list.html',
-                    controller: 'EmployeeDeleteCtrl'
-                }).
                 when('/employees/add/', {
-                    templateUrl: 'employee-add.html',
-                    controller: 'EmployeeAddCtrl'
-                }).
+                    template: '<employee-add></employee-add>'
+                })./*
                 when('/employees/update/:id', {
                     templateUrl: 'employee-add.html',
                     controller: 'EmployeeUpdateCtrl'
