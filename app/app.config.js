@@ -19,7 +19,7 @@ angular.module('mainApp')
                 })
                 .state('employees.add', {
                     url:'/add',
-                    component: 'employeeAdd'
+                    template: '<employee-add on-add="$ctrl.employees.push(e)"></employee-add>'
                 })
                 .state('employees.view', {
                     url:'/view/{id}',
@@ -33,6 +33,7 @@ angular.module('mainApp')
                 .state('employees.update', {
                     url:'/update/{id}',
                     component: 'employeeModify',
+                    //cannot find a way to resolve employee and have onModify
                     resolve: {
                         employee: function(Employee, $stateParams) {
                             return Employee.read($stateParams.id);

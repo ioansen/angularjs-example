@@ -5,19 +5,34 @@ angular.module('employeeList')
             var self = this;
             self.orderProp = 'id';
 
+            self.modify = function(employee){
+                for ( var i = 0; i < self.employees.length ; i++){
+                    if(self.employees[i].id === employee.id){
+                        self.employees[i] = employee;
+                        break;
+                    }
+                }
+            };
+
             self.delete = function (id) {
                 Employee.delete(id).then(function success(resp) {
                     console.log(resp.data.message);
-                    $state.reload();
+                    for ( var i = 0; i < self.employees.length ; i++){
+                        if(self.employees[i].id === id){
+                            self.employees.splice(i,1);
+                            break;
+                        }
+                    }
+                    //$state.reload();
                 });
 
-                Employee.demoPromise(false, 2).then(
-                function success(resp) {
-                    console.log(resp);
-                },
-                function error(resp) {
-                    console.log(resp);
-                });
-                console.log('order');
+            Employee.demoPromise(false, 2).then(
+            function success(resp) {
+                console.log(resp);
+            },
+            function error(resp) {
+                console.log(resp);
+            });
+            console.log('order');
             }
 }]);
