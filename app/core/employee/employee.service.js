@@ -31,15 +31,17 @@ angular.module('core.employee').
         };
 
         service.demoPromise = function (isErr, seconds) {
-            return $q(function (resolve, reject) {
-                setTimeout(function () {
-                    if (isErr){
-                        resolve(isErr + " is not an error")
-                    } else {
-                        reject("Error " + isErr);
-                    }
-                }, seconds * 1000);
-            })
+            var deffered = $q.defer();
+
+            setTimeout(function () {
+                if (isErr){
+                    deffered.resolve(isErr + " is not an error")
+                } else {
+                    deffered.reject("Error " + isErr);
+                }
+            }, seconds * 1000);
+
+            return deffered.promise;
         };
         return service;
     }]);
