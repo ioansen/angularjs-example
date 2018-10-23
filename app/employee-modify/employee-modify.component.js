@@ -1,7 +1,7 @@
 angular.module('employeeModify').
 component('employeeModify', {
     bindings: {
-       // onModify: '&',
+        onModify: '&',
         employee: '<'
     },
     templateUrl: "employee-add/employee-add.template.html",

@@ -32,13 +32,16 @@ angular.module('mainApp')
                 })
                 .state('employees.update', {
                     url:'/update/{id}',
-                    component: 'employeeModify',
+                    template: '<employee-modify on-modify="$ctrl.modify(e)" employee="$ctrl.selectedEmployee"></employee-modify>',
+                   // component: 'employeeModify',
                     //cannot find a way to resolve employee and have onModify
-                    resolve: {
+                    /*resolve: {
                         employee: function(Employee, $stateParams) {
                             return Employee.read($stateParams.id);
-                        }
-                    }
+                        },
+
+                        onModify: $ctrl.modify(e)
+                    }*/
                 })
 
 }]);

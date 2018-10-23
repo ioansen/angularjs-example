@@ -7,8 +7,8 @@
 
         <label for = "name">Name</label>
         <span style="color:red" ng-show = "employeeForm.name.$dirty && employeeForm.name.$invalid">
-        <span ng-show = "employeeForm.name.$error.required">Name is required</span>
-    </span><br>
+            <span ng-show = "employeeForm.name.$error.required">Name is required</span>
+        </span><br>
         <input id = "name" name="name" type="text" ng-model="$ctrl.employee.name" required/><br>
 
         <label for = "lastname">Last name</label>

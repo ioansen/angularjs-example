@@ -35,17 +35,18 @@
                     <td ng-bind="e.lastname"></td>
                     <td ng-bind="e.salary"></td>
                     <td>
-                        <a class="button_table" ng-click="$ctrl.showView()" ui-sref=".view({id: e.id})">View</a>
-                        <a class="button_table" ng-click="$ctrl.showView()" ui-sref=".update({id: e.id})">Modify</a>
+                        <a class="button_table" ui-sref=".view({id: e.id})">View</a>
+                        <a class="button_table" ng-click="$ctrl.selectedEmployee = e" ui-sref=".update({id: e.id})">Modify</a>
                         <button class="button_table" ng-click="$ctrl.delete(e.id)">Delete</button>
                     </td>
                 </tr>
             </table>
             <br>
-            <a class="button" ng-click="$ctrl.showView()" ui-sref=".add">Add employee</a>
+            <a class="button" ng-click="$ctrl.showDiv = !$ctrl.showDiv">Add view toogle</a>
+            <a class="button" ui-sref=".add">Add employee</a>
             <br>
             <div>
-                <div ui-view ng-show="$ctrl.showAddView"></div>
+                <div ui-view ng-show="$ctrl.showDiv"></div>
             </div>
         </div>
     </div>

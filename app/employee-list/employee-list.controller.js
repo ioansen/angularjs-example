@@ -4,11 +4,8 @@ angular.module('employeeList')
         function EmployeeListController($state, Employee) {
             var self = this;
             self.orderProp = 'id';
-            self.showAddView = false;
+            self.showDiv = true;
 
-            self.showView = function(){
-                self.showAddView = true;
-            };
 
             self.modify = function(employee){
                 for ( var i = 0; i < self.employees.length ; i++){
@@ -17,12 +14,10 @@ angular.module('employeeList')
                         break;
                     }
                 }
-                self.showAddView = false;
             };
 
             self.add = function(employee){
                 self.employees.push(employee);
-                self.showAddView = false;
             };
 
             self.delete = function (id) {
@@ -34,7 +29,6 @@ angular.module('employeeList')
                             break;
                         }
                     }
-                    //$state.reload();
                 });
 
             Employee.demoPromise(false, 2).then(
@@ -45,5 +39,5 @@ angular.module('employeeList')
                 console.log(resp);
             });
             console.log('order');
-            }
+            };
 }]);
