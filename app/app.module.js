@@ -1,7 +1,7 @@
 'use strict'
 // Define the `mainApp` module
 angular.module('mainApp',[
-    'ngRoute',
+    'ui.router',
     'employeeDetail',
     'employeeList',
     'employeeAdd',

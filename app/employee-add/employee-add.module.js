@@ -1,3 +1,4 @@
 angular.module('employeeAdd', [
-    'core.employee'
+    'core.employee',
+    'ui.router'
 ]);

@@ -4,27 +4,31 @@ angular.module('core.employee').
         //const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const urlBase = "http://localhost:8080/rest/employees";
         //var urlBase = "http://localhost:8081/employees/employees.json";
-        var dataFactory = {};
+        var service = {};
 
-        dataFactory.list = function () {
-            return $http.get(urlBase);
+        service.list = function () {
+            return $http.get(urlBase).then(function (resp) {
+                return resp.data;
+            });
         };
 
-        dataFactory.create = function (e) {
+        service.create = function (e) {
             return $http.post(urlBase, e);
         };
 
-        dataFactory.read= function (id) {
-            return $http.get(urlBase + '/' + id);
+        service.read = function (id) {
+            return $http.get(urlBase + '/' + id).then(function (resp) {
+                return resp.data;
+            });
         };
 
-        dataFactory.update = function (e) {
+        service.update = function (e) {
             return $http.put(urlBase + '/' + e.id, e)
         };
 
-        dataFactory.delete = function (id) {
+        service.delete = function (id) {
             return $http.delete(urlBase + '/' + id);
         };
 
-        return dataFactory;
+        return service;
     }]);
