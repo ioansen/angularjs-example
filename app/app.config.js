@@ -5,7 +5,7 @@
 angular.module('mainApp')
     .config(['$stateProvider', '$urlRouterProvider',
         function config($stateProvider, $urlRouterProvider ) {
-            $urlRouterProvider.otherwise('/employees');
+            $urlRouterProvider.otherwise('/employees/add');
 
             $stateProvider
                 .state('employees', {

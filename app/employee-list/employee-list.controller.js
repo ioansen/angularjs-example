@@ -32,12 +32,12 @@ angular.module('employeeList')
                 });
 
             Employee.demoPromise(false, 2).then(
-            function success(resp) {
-                console.log(resp);
-            },
-            function error(resp) {
-                console.log(resp);
-            });
-            console.log('order');
+                function success(resp) {
+                    console.log(resp);
+                },
+                function error(resp) {
+                    console.log(resp);
+                });
+                console.log('order');
             };
 }]);
