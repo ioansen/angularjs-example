@@ -36,7 +36,7 @@
                     <td ng-bind="e.salary"></td>
                     <td>
                         <a class="button_table" ui-sref=".view({id: e.id})">View</a>
-                        <a class="button_table" ng-click="$ctrl.selectedEmployee = e" ui-sref=".update({id: e.id})">Modify</a>
+                        <a class="button_table" ui-sref=".update({id: e.id})">Modify</a>
                         <button class="button_table" ng-click="$ctrl.delete(e.id)">Delete</button>
                     </td>
                 </tr>
