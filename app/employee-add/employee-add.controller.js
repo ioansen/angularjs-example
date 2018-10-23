@@ -7,7 +7,7 @@ angular.module('employeeAdd')
         self.reset = function(){
             self.employee.name = '';
             self.employee.lastname = '';
-            self.employee.salary = 4500;
+            self.employee.salary = '';
             self.employee.dep = 'it';
             self.employee.job = '';
         };

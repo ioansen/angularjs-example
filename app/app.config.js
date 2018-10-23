@@ -19,7 +19,7 @@ angular.module('mainApp')
                 })
                 .state('employees.add', {
                     url:'/add',
-                    template: '<employee-add on-add="$ctrl.employees.push(e)"></employee-add>'
+                    template: '<employee-add on-add="$ctrl.add(e)"></employee-add>'
                 })
                 .state('employees.view', {
                     url:'/view/{id}',
