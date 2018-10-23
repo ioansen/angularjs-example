@@ -1,5 +1,5 @@
 angular.module('core.employee').
-    factory('Employee', ['$http', function($http) {
+    factory('Employee', ['$http', '$q', function($http, $q) {
 
         //const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const urlBase = "http://localhost:8080/rest/employees";
@@ -30,5 +30,16 @@ angular.module('core.employee').
             return $http.delete(urlBase + '/' + id);
         };
 
+        service.demoPromise = function (isErr, seconds) {
+            return $q(function (resolve, reject) {
+                setTimeout(function () {
+                    if (isErr){
+                        resolve(isErr + " is not an error")
+                    } else {
+                        reject("Error " + isErr);
+                    }
+                }, seconds * 1000);
+            })
+        };
         return service;
     }]);
